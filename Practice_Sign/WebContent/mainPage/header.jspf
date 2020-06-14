@@ -1,0 +1,10 @@
+<!-- 15 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<h1>제이와이데브</h1>
+<hr>
+<a href="main.jsp">홈으로</a>&nbsp;&nbsp;
+<a href="profile.jsp">회사소개</a>&nbsp;&nbsp;
+<a href="product.jsp">제품소개</a>&nbsp;&nbsp;
+<a href="board.jsp">자유게시판</a>
+<hr>

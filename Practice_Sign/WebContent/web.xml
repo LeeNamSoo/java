@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>jsp</display-name>
+  <!-- 에레메세지 출력 순서 -->
+  <!-- 1.errorPage(JSP)  2.exception-type(web.xml)  3.error-code(web.xml) - 권장  4.웹브라우저 자체 에러메세지 -->
+  <!-- error-page : 에러가 발생된 경우 출력될 JSP 페이지를 지정하는 엘리먼트 -->
+  <!-- 예외를 이용한 에러 메세지 출력 	
+  <error-page>
+  	<exception-type>java.lang.NullPointerException</exception-type>
+  	<location>/error/null.jsp</location>
+  </error-page>
+  -->
+  <!-- 응답코드를 이용한 에러 메세지 출력-->
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/error/error500.jsp</location>
+  </error-page>
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error/error404.jsp</location>
+  </error-page>
+  
+  <!-- 요청되어 응답되는 JSP 페이지 맨위 또는 맨아래에 코드를 삽입하는 방법 -->
+  <jsp-config>
+  	<jsp-property-group>
+  		<!-- 클라이언트 요청 URL 패턴 설정하는 엘리먼트 -->
+  		<url-pattern>/mainPage/*</url-pattern>
+  		<!-- 요청 페이지 맨 위에 포함될 외부파일을 설정하는 엘리먼트 -->
+  		<include-prelude>/mainPage/header.jspf</include-prelude>
+  		<!-- 요청 페이지 맨 아래에 포함될 외부파일을 설정하는 엘리먼트 -->
+  		<include-coda>/mainPage/footer.jspf</include-coda>
+  	</jsp-property-group>
+  </jsp-config>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
